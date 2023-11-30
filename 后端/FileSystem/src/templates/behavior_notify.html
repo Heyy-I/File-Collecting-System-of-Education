@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>您已成功激活账号</title>
+<style>
+div{
+    font-size:x-large;
+    margin: 6px;
+    padding: 8px;
+    border-radius: 6px;
+    background: #5daeff88;
+}
+</style>
+</head>
+<body>
+    <div style="width:480px">
+        <span>您已成功{{action}},请返回班班集登录</span>
+    </div>
+    <div style="width:480px;margin-top:20px">
+       <span>本页面将在<span id="time">6</span>秒后自动关闭</span>
+    </div>
+</body>
+<script>
+function myClose(){
+    var n=parseInt(time.innerHTML);
+    n--;
+    if(n>0){
+        time.innerHTML=n;
+        timer=setTimeout(myClose,1000);
+    }else{
+        close();
+    }
+}
+var timer=null;
+window.onload=function(){
+    timer=setTimeout(myClose,1000);
+}
+</script>
+</html>
